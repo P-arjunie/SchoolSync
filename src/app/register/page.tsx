@@ -1,12 +1,12 @@
 'use client'
-import { FcGoogle } from 'react-icons/fc';
-import { FaApple } from 'react-icons/fa';
+// import { FcGoogle } from 'react-icons/fc';
+// import { FaApple } from 'react-icons/fa';
 import React from 'react'
 import Image from 'next/image'
 
 const LoginPage: React.FC = () => {
   return (
-    <main className="bg-[#26313c] h-screen flex items-center justify-center p-4 sm:p-10">
+    <main className="bg-[#26313c] h-full flex items-center justify-center p-4 sm:p-10">
       <div className="grid w-full h-full grid-cols-1 bg-white box-anim md:grid-cols-2">
         
         <div className="bg-[#16202a] text-white flex items-center justify-center flex-col p-6 sm:p-10">
@@ -68,7 +68,7 @@ const LoginPage: React.FC = () => {
                 Login
               </button>
               <label className="text-sm font-medium text-slate-200">
-                Don't have an account yet? <span className='text-blue-600 font-bold'> Register here.</span>
+                Do not have an account yet? <span className='text-blue-600 font-bold'> Register here.</span>
               </label>
             </form>
           </div>

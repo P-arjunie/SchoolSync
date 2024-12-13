@@ -3,8 +3,8 @@ import React from 'react'
 import { MdAccountCircle } from 'react-icons/md';
 import { CiCircleChevRight } from "react-icons/ci";
 import ModuleCompletenessPieChart from '../components/ModulePieChart';
-import { CiBellOn } from "react-icons/ci";
-import { CiCircleCheck } from "react-icons/ci";
+// import { CiBellOn } from "react-icons/ci";
+// import { CiCircleCheck } from "react-icons/ci";
 import DailyCalendar from '../components/Calender';
 
 const Dashboard = () => {
@@ -13,7 +13,7 @@ const Dashboard = () => {
 
 
   return (
-    <main className="bg-[#3F5B8B] h-screen flex flex-col p-4 sm:p-10">
+    <main className="bg-[#3F5B8B] h-full flex flex-col p-4 sm:p-10">
   
     <div className="w-full bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
         

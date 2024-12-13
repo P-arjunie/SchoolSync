@@ -1,73 +1,123 @@
 'use client'
 import React from 'react';
+import Image from 'next/image';
 
-const Login = () => {
+const Login: React.FC = () => {
   return (
-    <div>
-      <section className="bg-gray-50 dark:bg-gray-900">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Sign in to your account
-              </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+    <main className="bg-[#26313c] h-full flex items-center justify-center p-4 sm:p-10">
+      <div className="grid w-full h-full grid-cols-1 bg-white box-anim md:grid-cols-2">
+        
+        <div className="bg-white text-black flex items-center justify-center flex-col p-6 sm:p-10">
+          <div className="my-4 w-full max-w-xs sm:max-w-md lg:max-w-lg mx-auto">
+            <h1 className="text-3xl font-semibold text-center">Create Your Account</h1>
+
+            {/* Signup form */}
+            <form className="w-full mt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                  <label
+                    className="block text-sm font-medium text-black text-left"
+                    htmlFor="firstName"
+                  >
+                    First Name
+                  </label>
                   <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="name@company.com"
-                    required
+                    className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
+                    type="text"
+                    id="firstName"
+                    placeholder="First Name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                  <label
+                    className="block text-sm font-medium text-black text-left"
+                    htmlFor="lastName"
+                  >
+                    Last Name
+                  </label>
                   <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required
+                    className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
+                    type="text"
+                    id="lastName"
+                    placeholder="Last Name"
                   />
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-start">
-                    <div className="flex items-center h-5">
-                      <input
-                        id="remember"
-                        aria-describedby="remember"
-                        type="checkbox"
-                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                        required
-                      />
-                    </div>
-                    <div className="ml-3 text-sm">
-                      <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
-                    </div>
-                  </div>
-                  <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                >
-                  Sign in
-                </button>
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Don’t have an account yet? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
-                </p>
-              </form>
-            </div>
+              </div>
+
+              <label className="block text-sm font-medium text-black text-left" htmlFor="school">
+                School
+              </label>
+              <input
+                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
+                type="text"
+                id="school"
+                placeholder="School"
+              />
+
+              <label className="block text-sm font-medium text-black text-left" htmlFor="grade">
+                Grade
+              </label>
+              <input
+                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
+                type="text"
+                id="grade"
+                placeholder="Grade"
+              />
+
+              <label className="block text-sm font-medium text-black text-left" htmlFor="email">
+                Email
+              </label>
+              <input
+                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
+                type="email"
+                id="email"
+                placeholder="Email"
+              />
+
+              <label className="block text-sm font-medium text-black text-left" htmlFor="password">
+                Password
+              </label>
+              <input
+                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
+                type="password"
+                id="password"
+                placeholder="Password"
+              />
+
+              <label className="block text-sm font-medium text-black text-left" htmlFor="rePassword">
+                Re-enter Password
+              </label>
+              <input
+                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
+                type="password"
+                id="rePassword"
+                placeholder="Re-enter Password"
+              />
+
+              <button
+                type="submit"
+                className="w-full mt-6 mb-4 bg-[#2761c5] rounded-lg py-2 text-white hover:bg-indigo-700"
+              >
+                Sign Up
+              </button>
+              <label className="text-sm font-medium text-black">
+                Already have an account? <span className="text-blue-600 font-bold cursor-pointer">Login here.</span>
+              </label>
+            </form>
           </div>
         </div>
-      </section>
-    </div>
+
+        <div className="relative hidden md:block bg-[#3f5b8b]">
+          <Image 
+            className="object-cover" 
+            fill={true} 
+            src="/sideimg.png" 
+            alt="bg-image" 
+          />
+        </div>
+      </div>
+    </main>
   );
-}
+};
 
 export default Login;

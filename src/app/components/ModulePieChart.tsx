@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import {
@@ -7,8 +6,8 @@ import {
   Tooltip,
   Legend,
   ChartData,
+  TooltipItem,
 } from 'chart.js';
-
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -29,7 +28,6 @@ const ModuleCompletenessPieChart: React.FC<PieChartProps> = ({ completeness }) =
     ],
   };
 
-  
   const options = {
     plugins: {
       legend: {
@@ -37,8 +35,7 @@ const ModuleCompletenessPieChart: React.FC<PieChartProps> = ({ completeness }) =
       },
       tooltip: {
         callbacks: {
-          
-          label: function (tooltipItem: any) {
+          label: function (tooltipItem: TooltipItem<'pie'>) {
             const value = tooltipItem.raw || 0;
             return `${value}%`;
           },
