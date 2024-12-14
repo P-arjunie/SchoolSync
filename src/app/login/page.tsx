@@ -1,112 +1,85 @@
 'use client'
-import React from 'react';
-import Image from 'next/image';
+// import { FcGoogle } from 'react-icons/fc';
+// import { FaApple } from 'react-icons/fa';
+import React from 'react'
+import Image from 'next/image'
+import Navbar from '../components/NavBar';
+import Link from 'next/link';
 
-const Login: React.FC = () => {
+const LoginPage: React.FC = () => {
   return (
-    <main className="bg-[#26313c] h-full flex items-center justify-center p-4 sm:p-10">
+    
+    <main >
+      <Navbar/>
+      <div className="bg-[#26313c] h-full flex items-center justify-center p-4 sm:p-10">
       <div className="grid w-full h-full grid-cols-1 bg-white box-anim md:grid-cols-2">
         
-        <div className="bg-white text-black flex items-center justify-center flex-col p-6 sm:p-10">
+        <div className="bg-[#16202a] text-white flex items-center justify-center flex-col p-6 sm:p-10">
           <div className="my-4 w-full max-w-xs sm:max-w-md lg:max-w-lg mx-auto">
-            <h1 className="text-3xl font-semibold text-center">Create Your Account</h1>
+            <Image 
+              className="object-contain mx-auto mb-4" 
+              src="/logo.png" 
+              alt="SchoolSync Logo" 
+              width={130} 
+              height={100} 
+            />
+            <h1 className="text-3xl font-semibold text-center">Welcome to student portal</h1>
+            <p className="mt-1 text-xs text-slate-400 text-center">login to access your account</p>
 
-            {/* Signup form */}
+            {/* Login form */}
             <form className="w-full mt-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label
-                    className="block text-sm font-medium text-black text-left"
-                    htmlFor="firstName"
-                  >
-                    First Name
-                  </label>
-                  <input
-                    className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
-                    type="text"
-                    id="firstName"
-                    placeholder="First Name"
-                  />
-                </div>
-                <div>
-                  <label
-                    className="block text-sm font-medium text-black text-left"
-                    htmlFor="lastName"
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
-                    type="text"
-                    id="lastName"
-                    placeholder="Last Name"
-                  />
-                </div>
-              </div>
-
-              <label className="block text-sm font-medium text-black text-left" htmlFor="school">
-                School
+              <label
+                htmlFor="username"
+                className="block text-sm font-medium text-slate-200 text-left"
+              >
+                Username 
               </label>
               <input
-                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
+                className="mt-2 mb-4 w-full bg-transparent border border-gray-300 rounded-full px-4 py-2"
                 type="text"
-                id="school"
-                placeholder="School"
+                id="username"
+                placeholder="Username"
               />
-
-              <label className="block text-sm font-medium text-black text-left" htmlFor="grade">
-                Grade
-              </label>
-              <input
-                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
-                type="text"
-                id="grade"
-                placeholder="Grade"
-              />
-
-              <label className="block text-sm font-medium text-black text-left" htmlFor="email">
-                Email
-              </label>
-              <input
-                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
-                type="email"
-                id="email"
-                placeholder="Email"
-              />
-
-              <label className="block text-sm font-medium text-black text-left" htmlFor="password">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-slate-200 text-left"
+              >
                 Password
               </label>
               <input
-                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
+                className="mt-2 w-full bg-transparent border border-gray-300 rounded-full px-4 py-2"
                 type="password"
                 id="password"
                 placeholder="Password"
               />
+              <div className="w-full flex items-center justify-between mt-4">
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4 mr-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                  />
+                  <label className="text-sm font-medium text-slate-200">Remember me</label>
+                </div>
 
-              <label className="block text-sm font-medium text-black text-left" htmlFor="rePassword">
-                Re-enter Password
-              </label>
-              <input
-                className="mt-2 mb-4 w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black"
-                type="password"
-                id="rePassword"
-                placeholder="Re-enter Password"
-              />
+                <label className="text-sm font-bold ml-auto text-blue-600">
+                  Forgot password
+                </label>
+              </div>
 
               <button
                 type="submit"
-                className="w-full mt-6 mb-4 bg-[#2761c5] rounded-lg py-2 text-white hover:bg-indigo-700"
-              >
-                Sign Up
+                className="w-full mt-6 mb-4 bg-[#2761c5] rounded-full py-2 text-white hover:bg-indigo-700"
+              ><Link href="/dashboard">
+                Login</Link>
               </button>
-              <label className="text-sm font-medium text-black">
-                Already have an account? <span className="text-blue-600 font-bold cursor-pointer">Login here.</span>
+              <label className="text-sm font-medium text-slate-200">
+                Do not have an account yet? <span className='text-blue-600 font-bold'><Link href="/register"> Register here.</Link></span>
               </label>
             </form>
           </div>
         </div>
 
+        
         <div className="relative hidden md:block bg-[#3f5b8b]">
           <Image 
             className="object-cover" 
@@ -116,8 +89,9 @@ const Login: React.FC = () => {
           />
         </div>
       </div>
+      </div>
     </main>
-  );
-};
+  )
+}
 
-export default Login;
+export default LoginPage;

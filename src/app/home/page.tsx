@@ -29,7 +29,14 @@ const Home = () => {
         width={1000}   
         height={1000}   
     />  
-    <div className='flex flex-col justify-center items-center w-1/2 space-y-4'>   
+    <div className='flex flex-col justify-center items-center w-1/2 space-y-4'> 
+      <Image 
+              className="object-contain p-0 mb-16" 
+              src="/logo.png" 
+              alt="SchoolSync Logo" 
+              width={200} 
+              height={50} 
+      />  
         <Image   
             className="w-1/2 object-cover"   
             src="/welcome.jpg"   

@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import Image from 'next/image'
+import { MdAccountCircle } from 'react-icons/md';
 
-export default function Navbar() {
+export default function Navbar2() {
   return (
-    <nav className="bg-[#3d5a80] border-gray-200 dark:bg-gray-900 py-3">
+    <nav className="bg-[#3d5a80] border-gray-200 dark:bg-gray-900 py-2">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -11,12 +11,17 @@ export default function Navbar() {
           <span className="self-center text-4xl font-semibold text-white">SchoolSync</span>
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className='my-2'>
+            <h1 className="text-2xl font-semibold text-white">Anna Heily</h1>
+            <h3 className="text-sm text-gray-100">Grade 6</h3>
+        </div>
           <button
             type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          > <Link href="/login">Login</Link>
-            
+            className="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            <MdAccountCircle size={50} className="text-[#f9f9f9]" />
           </button>
+          
           <button
             data-collapse-toggle="navbar-cta"
             type="button"
@@ -43,13 +48,18 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="#" className="block text-lg py-2 px-3 md:p-0 text-gray-200 hover:text-blue-300">
+              <Link href="/modules" className="block text-lg py-2 px-3 md:p-0 text-gray-200 hover:text-blue-300">
                 Modules
               </Link>
             </li>
             <li>
               <Link href="#" className="block text-lg py-2 px-3 md:p-0 text-gray-200 hover:text-blue-300">
                 Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/dashboard" className="block text-lg py-2 px-3 md:p-0 text-gray-200 hover:text-blue-300">
+                Dashboard
               </Link>
             </li>
           </ul>
