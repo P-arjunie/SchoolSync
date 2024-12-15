@@ -1,11 +1,10 @@
 'use client'
 import React from 'react';
-import { MdAccountCircle } from 'react-icons/md';
-import { CiCircleChevRight } from "react-icons/ci";
 import ModuleCompletenessPieChart from '../components/ModulePieChart';
 import DailyCalendar from '../components/Calender';
 import Navbar2 from '../components/NavBar2';
 import Footer from '../components/Footer';
+import Image from 'next/image';  // Import the Image component from next/image
 
 const Dashboard = () => {
   const today = new Date();
@@ -48,14 +47,20 @@ const Dashboard = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[{
-            img: "/UI1.jpg", title: "Learn UI UX with ZHF Design Studio", tutorials: 35, hours: 0.3, next: "30 mins"
+            img: "/UI1.jpg", title: "Learn UI UX Fundamentals", tutorials: 35, hours: 0.3, next: "30 mins"
           }, {
-            img: "/cloud1.jpg", title: "Structure Expert - 3D Design", tutorials: 120, hours: 0.6, next: "8.6 mins"
+            img: "/cloud1.jpg", title: "Cloud Computing", tutorials: 120, hours: 0.6, next: "8.6 mins"
           }, {
-            img: "/data1.jpg", title: "Learn Programming FAST!", tutorials: 55, hours: 0.3, next: "22.24 hrs"
+            img: "/data1.jpg", title: "Data Analytics", tutorials: 55, hours: 0.3, next: "22.24 hrs"
           }].map((course, index) => (
             <div key={index} className="rounded-2xl bg-gradient-to-r from-[#3d5a80] to-[#5071a4] p-6 text-white">
-              <img src={course.img} alt={course.title} className="h-72 object-cover w-full rounded-md mb-4" />
+              <Image 
+                src={course.img} 
+                alt={course.title} 
+                width={400} 
+                    height={250} 
+                    className="w-full h-56 object-cover rounded-md mb-6" 
+              />
               <h2 className="text-lg font-semibold mb-2">{course.title}</h2>
               <div className="flex items-center text-sm mb-4">
                 <span className="mr-2">{course.tutorials} Tutorials</span>
@@ -71,7 +76,7 @@ const Dashboard = () => {
 
       <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-8 p-4">
         <div className="rounded-lg shadow-xl p-8 bg-white">
-          <h1 className="text-2xl font-bold text-[#3d5a80] mb-4 text-center">Today's Classes</h1>
+          <h1 className="text-2xl font-bold text-[#3d5a80] mb-4 text-center">Today&apos;s Classes</h1>
           {[{
             subject: 'Cloud Computing', time: '2:00 p.m.', duration: '2-hour session'
           }, {
