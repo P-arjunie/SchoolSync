@@ -23,7 +23,7 @@ const Home = () => {
        
     <div className='flex p-0 m-0 items-center z-10'>  
     <Image   
-         className='z-10'
+         className='z-10 unoptimized'
         src="/teach.gif"   
         alt="bg-image"   
         width={1000}   
@@ -134,7 +134,7 @@ const Home = () => {
             <h1 className="font-medium text-gray-700">By {course.instructor}</h1>
             <button className="flex items-center space-x-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
               <p>Enroll Now</p>
-              <Image
+              <Image className='unoptimized'
                 objectFit="cover"
                 src="/arrow2.gif"
                 alt="arrow"
